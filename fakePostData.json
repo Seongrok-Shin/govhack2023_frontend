@@ -1,0 +1,17 @@
+{
+    "post_id": "1",
+    "author": {
+      "user_id": "987654321",
+      "username": "socialguru23",
+      "full_name": "John Doe",
+      "profile_picture": "https://example.com/profile.jpg",
+      "title_picture": "https://example.com/title.jpg",
+      "title": "green kiwi",
+      "points": 30
+    },
+    "timestamp": "2023-08-19T15:30:00Z",
+    "post_image": "https://example.com/john.jpg",
+    "content": "Just took a bus! 🌊🌿 #NatureLovers",
+    "likes": 128
+  }
+  

@@ -35,34 +35,56 @@ export default function Login() {
     };
 
     const signUpPage = () => {
-        router.push("/signup")
+      router.push("/signup")
     }
-    return (
-        <form className="position-absolute top-50 start-50 translate-middle">
-            <h1 className="text-center source_sans py-3 text-success">GREEN KIWI</h1>
-            <div className="form-group">
-                <input id="email" type="text" placeholder="email" className="form-control"
-                    onChange={event => setUser({ ...user, email: event.target.value })} />
-            </div>
-            <div className="form-group py-3">
-                <input id="password" type="password" placeholder="**********" className="form-control"
-                    onChange={event => setUser({ ...user, password: event.target.value })} />
-            </div>
-            <div className="form-group d-flex justify-content-center">
-                <button className="btn btn-success px-5" type="button" onClick={loginSubmit}>
-                    Sign In
-                </button>
-            </div>
-            <div className="fs-6 text-center">
-                <Link href="/forgot">Forgot password?</Link>
-            </div>
-            <div className="form-group d-flex justify-content-center py-5">
-                <button className="btn btn-success px-5" type="button" onClick={signUpPage}>
-                    Register
-                </button>
-            </div>
-        </form>
-    )
+
+  return (
+    <div className="d-flex justify-content-center align-items-center">
+      <form className="px-3 pt-5 w-100">
+        <h1 className="text-center source_sans py-5 text-success">GREEN KIWI</h1>
+        <div className="form-group">
+          <input
+            id="email"
+            type="text"
+            placeholder="example@email.com"
+            className="form-control"
+            onChange={(event) => setUser({ ...user, email: event.target.value })}
+          />
+        </div>
+        <div className="form-group py-3">
+          <input
+            id="password"
+            type="password"
+            placeholder="Your password"
+            className="form-control"
+            onChange={(event) =>
+              setUser({ ...user, password: event.target.value })
+            }
+          />
+        </div>
+        <div className="form-group d-flex justify-content-center">
+          <button
+            className="btn btn-success d-block w-100 p-2"
+            type="button"
+            onClick={loginSubmit}
+          >
+            Sign In
+          </button>
+        </div>
+        <div className="fs-6 pt-3 text-center">
+          <Link href="/forgot">Forgot password?</Link>
+        </div>
+        <div className="form-group d-flex justify-content-center py-5">
+          <button
+            className="btn btn-success d-block w-100 p-2 px-5"
+            type="button"
+            onClick={signUpPage}>
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 }
 
 const forceLoginWithDefaultUser = (router) => {

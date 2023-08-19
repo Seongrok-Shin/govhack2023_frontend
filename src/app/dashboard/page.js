@@ -1,5 +1,6 @@
-'use client'
+'use client';
 import styles from '../page.module.css';
+import Nav from '../Nav';
 import Footer from '../_components/footer';
 import { BarChart } from '@mui/x-charts/BarChart';
 
@@ -74,7 +75,6 @@ export default Dashboard;
 //   };
 // }
 
-
 // const Dashboard = () => {
 //   const [chartSize, setChartSize] = useState(600);
 
@@ -135,5 +135,3 @@ export default Dashboard;
 // }
 
 // export default Dashboard;
-
-

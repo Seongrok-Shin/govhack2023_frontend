@@ -4,6 +4,6 @@ export const ENVIRONMENT = {
 }
 
 export const FEATURE_FLAGS = {
-    CanLoginBeSkipped: process.env.NEXT_PUBLIC_CAN_LOGIN_BE_SKIPPED
+    CanLoginBeSkipped: process.env.NEXT_PUBLIC_CAN_LOGIN_BE_SKIPPED === "true"
 
 }

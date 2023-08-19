@@ -2,6 +2,7 @@
 import Card from 'react-bootstrap/Card';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Post.scss';
+import Image from 'next/image';
 
 function Post() {
   return (
@@ -15,11 +16,11 @@ function Post() {
           <p className="profile__name">John Doe</p>
         </div>
         <div className="profile__buttons">
-          <button className="profile__button">
-            <i class="bi bi-pencil profile__icon"></i>
+          <button className='profile__button'>
+          <i className="bi bi-pencil profile__icon"></i>
           </button>
-          <button className="profile__button">
-            <i class="bi bi-trash3 profile__icon"></i>
+          <button className='profile__button'>
+          <i className="bi bi-trash3 profile__icon"></i>
           </button>
         </div>
       </div>
@@ -34,6 +35,7 @@ function Post() {
           src="https://randomuser.me/api/portraits/men/1.jpg"
         />
         <div className="profile__buttons profile__buttons--like">
+
           <div className="likes__container">
             <i class="bi bi-hearts profile__icon profile__icon--heart"></i>
             <button className="likes">50</button>
@@ -42,6 +44,7 @@ function Post() {
           <div className="likes__container">
             <i class="bi bi-suit-heart-fill profile__icon profile__icon--heart"></i>
             <button className="likes">Like</button>
+
           </div>
         </div>
       </Card.Body>

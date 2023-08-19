@@ -4,6 +4,9 @@ import { auth } from "../../../firebaseConfig"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { useState } from "react"
 import { useRouter } from "next/navigation";
+
+import Link from "next/link";
+import '../main.scss'
 import 'bootstrap/dist/css/bootstrap.css'
 import { ENVIRONMENT, FEATURE_FLAGS } from "../env";
 
@@ -12,6 +15,7 @@ export default function Login() {
     const [user, setUser] = useState({ email: '', password: '' })
     const router = useRouter()
 
+    console.log("FEATURE_FLAGS.CanLoginBeSkipped? " + FEATURE_FLAGS.CanLoginBeSkipped);
     if (FEATURE_FLAGS.CanLoginBeSkipped) {
         forceLoginWithDefaultUser(router);
     }
@@ -30,29 +34,28 @@ export default function Login() {
     }
 
     return (
-        <form >
-            <h1>GREEN KIWI</h1>
+        <form className="position-absolute top-50 start-50 translate-middle">
+            <h1 className="text-center source_sans py-3 text-success">GREEN KIWI</h1>
             <div className="form-group">
-                <label className="form-label">
-                    Email
-                </label>
                 <input id="email" type="text" placeholder="email" className="form-control"
                     onChange={event => setUser({ ...user, email: event.target.value })} />
             </div>
-            <div className="form-group">
-                <label htmlFor="password" className="form-label">
-                    Password
-                </label>
+            <div className="form-group py-3">
                 <input id="password" type="password" placeholder="**********" className="form-control"
                     onChange={event => setUser({ ...user, password: event.target.value })} />
             </div>
-            <div className="form-group">
-                <button className="btn btn-success" type="button" onClick={loginSubmit}>
+            <div className="form-group d-flex justify-content-center">
+                <button className="btn btn-success px-5" type="button" onClick={loginSubmit}>
                     Sign In
                 </button>
             </div>
-            <div className="col">
-                <a href="#!">Forgot password?</a>
+            <div className="fs-6 text-center">
+                <Link href="/forgot">Forgot password?</Link>
+            </div>
+            <div className="form-group d-flex justify-content-center py-5">
+                <button className="btn btn-success px-5" type="button" onClick={loginSubmit}>
+                    Register
+                </button>
             </div>
         </form>
     )

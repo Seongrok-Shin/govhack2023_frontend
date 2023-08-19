@@ -1,6 +1,6 @@
-'use client'
-import React from 'react'
-import './CreatePost.scss'
+'use client';
+import React from 'react';
+import './CreatePost.scss';
 
 export default function CreatePost() {
   return (

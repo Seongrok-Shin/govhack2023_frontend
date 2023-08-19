@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Post.scss';
 import Image from 'next/image';
 
-function Post({post}) {
+function Post({ post }) {
   return (
     <Card className="post">
       <div className="profile">
@@ -41,8 +41,8 @@ function Post({post}) {
           </div>
 
           <div className="likes__container">
-            <i className="bi bi-suit-heart-fill profile__icon profile__icon--heart"></i>
-            <button className="likes">Like</button>
+            <i class="bi bi-suit-heart-fill profile__icon profile__icon--heart"></i>
+            <button className="likes">Kudos</button>
           </div>
         </div>
       </Card.Body>

@@ -1,19 +1,25 @@
-'use client'
-import React, { useState } from 'react';
-import Link from 'next/link';
-import styles from '../page.module.css';
-import Image from 'next/image';
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import styles from "../page.module.css";
+import Image from "next/image";
+
+const INITIAL_TOGGLE_STATES = {
+  BADGES: true,
+  CHALLENGES: false
+};
+
 const Dashboard = () => {
   const user = {
-    Firstname: 'Harold',
-    Lastname: 'Min',
-    ID: 'abcdef1234',
-    Title: 'Super C02 Saver',
-    Image: 'https://randomuser.me/api/portraits/men/1.jpg'
+    Firstname: "Harold",
+    Lastname: "Min",
+    ID: "abcdef1234",
+    Title: "Super C02 Saver",
+    Image: "https://randomuser.me/api/portraits/men/1.jpg",
   };
 
-  const [showBadges, setShowBadges] = useState(false);
-  const [showChallenges, setShowChallenges] = useState(false);
+  const [showBadges, setShowBadges] = useState(INITIAL_TOGGLE_STATES.BADGES);
+  const [showChallenges, setShowChallenges] = useState(INITIAL_TOGGLE_STATES.CHALLENGES);
 
   const toggleBadges = () => {
     setShowBadges(!showBadges);
@@ -22,26 +28,38 @@ const Dashboard = () => {
 
   const toggleChallenges = () => {
     setShowChallenges(!showChallenges);
-    setShowBadges(false); 
+    setShowBadges(false);
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.profileCard}>
         <div className={styles.profileImageContainer}>
-          <img src={user.Image} alt={`${user.Firstname}'s profile`} className={styles.profileImage} />
+          <img
+            src={user.Image}
+            alt={`${user.Firstname}'s profile`}
+            className={styles.profileImage}
+          />
         </div>
         <div className={styles.profileInfo}>
-          <h2 className={styles.profileName}>{`${user.Firstname} ${user.Lastname}`}</h2>
+          <h2
+            className={styles.profileName}
+          >{`${user.Firstname} ${user.Lastname}`}</h2>
           <p className={styles.profileTitle}>{user.Title}</p>
           <p className={styles.profileID}>ID: {user.ID}</p>
         </div>
 
         <div className={styles.buttonContainer}>
-          <button className={styles.stylishButton1} onClick={toggleChallenges}>Challenge</button>
-          <button className={styles.stylishButton2} onClick={toggleBadges}>Badges</button>
+          <button className={styles.stylishButton1} onClick={toggleChallenges}>
+            Challenge
+          </button>
+          <button className={styles.stylishButton2} onClick={toggleBadges}>
+            Badges
+          </button>
         </div>
+      </div>
 
+      <div className={styles.badgeSection}>
         {showBadges && (
           <>
             <p className={styles.profileTitle}>Refer A Friend</p>
@@ -81,7 +99,10 @@ const Dashboard = () => {
         {showChallenges && (
           <>
             <p className={styles.profileTitle}>What is Refer A Friend?</p>
-            <p>* You can accomplish this by sharing your status with your friends!</p>
+            <p>
+              * You can accomplish this by sharing your status with your
+              friends!
+            </p>
 
             <p className={styles.profileTitle}>What is Ride Bike?</p>
             <p>* You can attain this by recording your bike rides!</p>
@@ -96,31 +117,51 @@ const Dashboard = () => {
         <ul>
           <li>
             <div className={styles.logo}>
-              <img src="/eco-house.png" alt="eco house logo" style={{ width: '30px', height: '30', marginLeft: 4 }} />
+              <img
+                src="/eco-house.png"
+                alt="eco house logo"
+                style={{ width: "30px", height: "30", marginLeft: 4 }}
+              />
             </div>
             <Link href="/">Home</Link>
           </li>
           <li>
             <div className={styles.logo}>
-              <img src="layout.png" alt="layout logo" style={{ width: '30px', height: '30', marginLeft: 15 }} />
+              <img
+                src="layout.png"
+                alt="layout logo"
+                style={{ width: "30px", height: "30", marginLeft: 15 }}
+              />
             </div>
             <Link href="/dashboard">Dashboard</Link>
           </li>
           <li>
             <div className={styles.logo}>
-              <img src="/present.png" alt="present logo" style={{ width: '30px', height: '30', marginLeft: 7 }} />
+              <img
+                src="/present.png"
+                alt="present logo"
+                style={{ width: "30px", height: "30", marginLeft: 7 }}
+              />
             </div>
             <Link href="/freebies">Freebies</Link>
           </li>
           <li>
             <div className={styles.logo}>
-              <img src="/learning.png" alt="learning logo" style={{ width: '30px', height: '30', marginLeft: 8 }} />
+              <img
+                src="/learning.png"
+                alt="learning logo"
+                style={{ width: "30px", height: "30", marginLeft: 8 }}
+              />
             </div>
             <Link href="/learning">Learning</Link>
           </li>
           <li>
             <div className={styles.logo}>
-              <img src="/user.png" alt="user logo" style={{ width: '30px', height: '30', marginLeft: 3 }} />
+              <img
+                src="/user.png"
+                alt="user logo"
+                style={{ width: "30px", height: "30", marginLeft: 3 }}
+              />
             </div>
             <Link href="/reward">Profile</Link>
           </li>
@@ -131,5 +172,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-

@@ -12,10 +12,10 @@ export default function Home() {
     await signOut(auth);
   };
 
-  const isLoggedin = false;
+  const isLoggedin = auth.currentUser != null;
 
   const router = useRouter()
-  if (isLoggedin) {
+  if (!isLoggedin) {
     router.push("/login");
   } else {
     return (

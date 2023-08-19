@@ -26,7 +26,9 @@ export default function Home() {
     }
   }, []);
   console.log("User is logged in? " + isUserLoggedIn);
-
+  const uploadPage = () => {
+    router.push("/upload");
+  }
   const router = useRouter();
   if (!isUserLoggedIn) {
     return <span>hi</span>;
@@ -37,6 +39,7 @@ export default function Home() {
         <button type="button" onClick={logout}>
           sign out
         </button>
+        <button onClick={uploadPage}>Upload Page</button>
         <CreatePost />
         <Post />
         <Post />

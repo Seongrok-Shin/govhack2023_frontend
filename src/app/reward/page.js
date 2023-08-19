@@ -49,9 +49,9 @@ const Dashboard = () => {
           <p className={styles.profileTitle}>Use Public Transport</p>
           <div className={styles.badgeCard}>
           <div>
-            <img src="/1.png" alt="eco house logo" className={styles.badgeImage} />
-            <img src="/2.png" alt="eco house logo" className={styles.badgeImage} />
-            <img src="/3.png" alt="eco house logo" className={styles.badgeImage} />
+            <img src="/12.png" alt="eco house logo" className={styles.badgeImage} />
+            <img src="/13.png" alt="eco house logo" className={styles.badgeImage} />
+            <img src="/14.png" alt="eco house logo" className={styles.badgeImage} />
           </div>
         </div>
       </div>

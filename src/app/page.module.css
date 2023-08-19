@@ -276,8 +276,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 660px;
-  width: 300px;
+}
+
+.badgeSection {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .badgeCard {

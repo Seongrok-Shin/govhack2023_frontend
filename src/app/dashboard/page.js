@@ -1,9 +1,9 @@
 "use client";
 import styles from "../page.module.css";
-import Footer from "../_components/footer";
 import { BarChart } from "@mui/x-charts/BarChart";
 
 import React, { useState, useEffect } from "react";
+import Nav from "../Nav";
 
 const data = [
   { date: "2023-05", emission: { transport: 20, housing: 50, food: 60 } },
@@ -125,7 +125,7 @@ const Dashboard = () => {
         />
       </div>
       <nav className={styles.navigation}>
-        <Footer></Footer>
+        <Nav/>
       </nav>
     </div>
   );

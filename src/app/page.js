@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import Link from "next/link";
-import PostList from "./PostList";
+import PostList from "./components/PostList";
 
 export default function Home() {
   const logout = async () => {

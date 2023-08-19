@@ -1,6 +1,6 @@
 'use client';
 import Post from "../Post";
-import { api } from "../api/api";
+import { api } from "../api/postsApi";
 import React from 'react'
 
 export default function PostList({ posts }) {

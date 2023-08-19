@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Post.scss';
@@ -6,10 +6,13 @@ import Image from 'next/image';
 
 function Post() {
   return (
-    <Card className='post'>
+    <Card className="post">
       <div className="profile">
         <div className="profile__container">
-          <img src="https://randomuser.me/api/portraits/men/1.jpg" className="profile__picture"></img>
+          <img
+            src="https://randomuser.me/api/portraits/men/1.jpg"
+            className="profile__picture"
+          ></img>
           <p className="profile__name">John Doe</p>
         </div>
         <div className="profile__buttons">
@@ -22,20 +25,26 @@ function Post() {
         </div>
       </div>
       <Card.Body>
-       <Card.Text>
+        <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Card.Img className='profile__image' variant="top" src="https://randomuser.me/api/portraits/men/1.jpg" />
+        <Card.Img
+          className="profile__image"
+          variant="top"
+          src="https://randomuser.me/api/portraits/men/1.jpg"
+        />
         <div className="profile__buttons profile__buttons--like">
-          <div className='likes__container'>
-            <i className="bi bi-hearts profile__icon profile__icon--heart"></i>
-            <button className='likes'>50</button>
+
+          <div className="likes__container">
+            <i class="bi bi-hearts profile__icon profile__icon--heart"></i>
+            <button className="likes">50</button>
           </div>
 
-          <div className='likes__container'>
-            <i className="bi bi-suit-heart-fill profile__icon profile__icon--heart"></i>
-            <button className='likes'>Like</button>
+          <div className="likes__container">
+            <i class="bi bi-suit-heart-fill profile__icon profile__icon--heart"></i>
+            <button className="likes">Like</button>
+
           </div>
         </div>
       </Card.Body>

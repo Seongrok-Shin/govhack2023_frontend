@@ -9,7 +9,7 @@ function Post() {
     <Card className='post'>
       <div className="profile">
         <div className="profile__container">
-          <Image src="https://randomuser.me/api/portraits/men/1.jpg" className="profile__picture"></Image>
+          <img src="https://randomuser.me/api/portraits/men/1.jpg" className="profile__picture"></img>
           <p className="profile__name">John Doe</p>
         </div>
         <div className="profile__buttons">

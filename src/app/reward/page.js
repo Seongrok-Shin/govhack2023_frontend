@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../page.module.css';
-
+import Image from 'next/image';
 const Dashboard = () => {
   const user = {
     Firstname: 'Harold',

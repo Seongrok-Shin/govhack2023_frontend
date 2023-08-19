@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './page.module.css';
+import styles from '../page.module.css';
 
-export default function Home() {
 
+const Dashboard = () => {
   return (
     <div className={styles.container}>
-      <h1>Green Kiwi</h1>
+      <h1>Reward page</h1>
       <nav className={styles.navigation}>
         <ul>
           <li>
@@ -42,5 +42,10 @@ export default function Home() {
         </ul>
       </nav>
     </div>
-  );
+    
+  )
 }
+
+export default Dashboard;
+
+

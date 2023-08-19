@@ -4,7 +4,6 @@ import { auth } from "../../../firebaseConfig";
 const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_API_ENDPOINT;
 const GET_ALL_POSTS = "post/all";
 
-
 export async function getAllPosts() {
     const token = await auth.currentUser.getIdToken();
     console.debug("Getting all posts...");
@@ -15,8 +14,5 @@ export async function getAllPosts() {
     try {
       console.debug("Got posts!", res.data);
       return res.data;
-    } catch (err) {
-      console.error(err);
-      return [];
-    }
-}
+  },
+};

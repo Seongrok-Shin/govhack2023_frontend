@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import Link from "next/link";
 import PostList from "./PostList";
+
 export default function Home() {
   const logout = async () => {
     console.log("Logging out...");
@@ -25,12 +26,15 @@ export default function Home() {
       setIsUserLoggedIn(true);
     }
   }, []);
+
   console.log("User is logged in? " + isUserLoggedIn);
 
   const router = useRouter();
   if (!isUserLoggedIn) {
     return <span>hi</span>;
   } else {
+
+
     return (
       <div className={styles.container}>
         <h1>Green Kiwi</h1>
@@ -38,8 +42,8 @@ export default function Home() {
           sign out
         </button>
         <CreatePost />
+        <PostList />
         <PostList/>
-
         <nav className={styles.navigation}>
           <ul>
             <li>

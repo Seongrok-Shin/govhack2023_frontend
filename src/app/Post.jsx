@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Post.scss';
 import Image from 'next/image';
 
-function Post() {
+function Post({post}) {
   return (
     <Card className="post">
       <div className="profile">
@@ -13,7 +13,7 @@ function Post() {
             src="https://randomuser.me/api/portraits/men/1.jpg"
             className="profile__picture"
           ></img>
-          <p className="profile__name">John Doe</p>
+          <p className="profile__name">{post.content}</p>
         </div>
         <div className="profile__buttons">
           <button className='profile__button'>

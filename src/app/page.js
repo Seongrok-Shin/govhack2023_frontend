@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Post from "./Post";
 import CreatePost from "./CreatePost";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import Link from "next/link";
+import PostList from "./components/PostList";
 export default function Home() {
   const logout = async () => {
     console.log("Logging out...");
@@ -25,12 +25,15 @@ export default function Home() {
       setIsUserLoggedIn(true);
     }
   }, []);
+
   console.log("User is logged in? " + isUserLoggedIn);
 
   const router = useRouter();
   if (!isUserLoggedIn) {
     return <span>hi</span>;
   } else {
+
+
     return (
       <div className={styles.container}>
         <h1>Green Kiwi</h1>
@@ -38,11 +41,7 @@ export default function Home() {
           sign out
         </button>
         <CreatePost />
-        <Post />
-        <Post />
-
-        <Post />
-        <Post />
+        <PostList />
 
         <nav className={styles.navigation}>
           <ul>

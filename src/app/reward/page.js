@@ -31,28 +31,34 @@ const Dashboard = () => {
 
         <p className={styles.profileTitle}>Refer A Friend</p>
         <div className={styles.badgeCard}>
-          <div>
-            <img src="/1.png" alt="eco house logo" className={styles.badgeImage} />
-            <img src="/2.png" alt="eco house logo" className={styles.badgeImage} />
-            <img src="/3.png" alt="eco house logo" className={styles.badgeImage} />
+          <div className={styles.badgeContainer}>
+            <div>
+              <Image src="/1.png" alt="eco house logo" width={40} height={40} />
+              <Image src="/2.png" alt="eco house logo" width={40} height={40} />
+              <Image src="/3.png" alt="eco house logo" width={40} height={40} />
+            </div>
           </div>
         </div>
 
         <p className={styles.profileTitle}>Ride Bike</p>
         <div className={styles.badgeCard}>
+          <div className={styles.badgeContainer}>
+          </div>
           <div>
-            <img src="/4.png" alt="eco house logo" className={styles.badgeImage} />
-            <img src="/5.png" alt="eco house logo" className={styles.badgeImage} />
-            <img src="/6.png" alt="eco house logo" className={styles.badgeImage} />
+            <Image src="/4.png" alt="eco house logo" width={40} height={40} />
+            <Image src="/5.png" alt="eco house logo" width={40} height={40} />
+            <Image src="/6.png" alt="eco house logo" width={40} height={40} />
           </div>
         </div>
 
-          <p className={styles.profileTitle}>Use Public Transport</p>
-          <div className={styles.badgeCard}>
-          <div>
-            <img src="/12.png" alt="eco house logo" className={styles.badgeImage} />
-            <img src="/13.png" alt="eco house logo" className={styles.badgeImage} />
-            <img src="/14.png" alt="eco house logo" className={styles.badgeImage} />
+        <p className={styles.profileTitle}>Use Public Transport</p>
+        <div className={styles.badgeCard}>
+          <div className={styles.badgeContainer}>
+            <div>
+              <Image src="/12.png" alt="eco house logo" width={40} height={40} />
+              <Image src="/13.png" alt="eco house logo" width={40} height={40} />
+              <Image src="/14.png" alt="eco house logo" width={40} height={40} />
+            </div>
           </div>
         </div>
       </div>
@@ -87,7 +93,7 @@ const Dashboard = () => {
             <div className={styles.logo}>
               <img src="/user.png" alt="user logo" style={{ width: '30px', height: '30', marginLeft: 3 }} />
             </div>
-            <Link href="/profile">Profile</Link>
+            <Link href="/reward">Profile</Link>
           </li>
         </ul>
       </nav>

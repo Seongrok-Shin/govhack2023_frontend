@@ -1,7 +1,6 @@
-'use client';
 import React, { useEffect, useState } from 'react'
 import Post from "./Post";
-import { getAllPosts } from './api/api';
+import { getAllPosts } from './api/postsApi';
 
 export default function PostList() {
   const [userPosts, setUserPosts] = useState([]);

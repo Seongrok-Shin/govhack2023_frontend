@@ -11,44 +11,30 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { ENVIRONMENT, FEATURE_FLAGS } from '../env';
 
 export default function Login() {
-  const [user, setUser] = useState({ email: '', password: '' });
-  const router = useRouter();
+    const [user, setUser] = useState({ email: '', password: '' });
+    const router = useRouter();
 
-  console.log(
-    'FEATURE_FLAGS.CanLoginBeSkipped? ' + FEATURE_FLAGS.CanLoginBeSkipped
-  );
-  if (FEATURE_FLAGS.CanLoginBeSkipped) {
-    forceLoginWithDefaultUser(router);
-  }
-
-  const loginSubmit = () => {
-    signInWithEmailAndPassword(auth, user.email, user.password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        router.push('/');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
-  };
-
+    console.log(
+        'FEATURE_FLAGS.CanLoginBeSkipped? ' + FEATURE_FLAGS.CanLoginBeSkipped
+    );
+    if (FEATURE_FLAGS.CanLoginBeSkipped) {
+        forceLoginWithDefaultUser(router);
+    }
 
     const loginSubmit = () => {
         signInWithEmailAndPassword(auth, user.email, user.password)
             .then((userCredential) => {
-                // Signed in 
+                // Signed in
                 const user = userCredential.user;
-                router.push("/");
+                router.push('/');
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
             });
-    }
+    };
 
-    const signUpPage = () =>{
+    const signUpPage = () => {
         router.push("/signup")
     }
     return (
@@ -80,13 +66,13 @@ export default function Login() {
 }
 
 const forceLoginWithDefaultUser = (router) => {
-  signInWithEmailAndPassword(
-    auth,
-    ENVIRONMENT.DefaultUserEmail,
-    ENVIRONMENT.DefaultUserPass
-  )
-    .then((userCredential) => {
-      router.push('/');
-    })
-    .catch(console.error);
+    signInWithEmailAndPassword(
+        auth,
+        ENVIRONMENT.DefaultUserEmail,
+        ENVIRONMENT.DefaultUserPass
+    )
+        .then((userCredential) => {
+            router.push('/');
+        })
+        .catch(console.error);
 };

@@ -18,6 +18,11 @@
   &__name {
     font-size: 18px;
     cursor: pointer;
+    transition: 0.2s linear;
+  }
+
+  &__name:hover {
+    color: #777;
   }
 
   &__container {
@@ -45,6 +50,11 @@
     background-color: #fff;
     border: none;
     cursor: pointer;
+    transition: 0.2s linear;
+  }
+
+  &__button:hover {
+    color: #777;
   }
 
   &__image {
@@ -58,16 +68,27 @@
     font-size: 30px;
     cursor: pointer;
     color: rgb(96, 153, 12);
+    transition: 0.2s linear;
+  }
+
+  &__icon--heart:hover {
+    color: rgb(155, 239, 30);
   }
 }
 
 .likes {
+  font-size: 20px;
   border: none;
   background-color: #fff;
+  transition: 0.2s linear;
   cursor: pointer;
 
   &__container {
     display: flex;
     align-items: center;
   }
+}
+
+.likes:hover {
+  color: #777;
 }

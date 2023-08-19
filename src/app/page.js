@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useEffect } from 'react';
 import Post from './Post';
 import CreatePost from './CreatePost';
 import styles from './page.module.css'
@@ -9,10 +9,14 @@ import { auth } from '../../firebaseConfig'
 import Link from 'next/link';
 export default function Home() {
   const logout = async () => {
+    console.log("Logging out...");
     await signOut(auth);
+    console.log("Redirecting to login page...");
+    router.push("/login");
   };
 
   const isLoggedin = auth.currentUser != null;
+  console.log("User is logged in? " + isLoggedin);
 
   const router = useRouter()
   if (!isLoggedin) {
@@ -21,7 +25,7 @@ export default function Home() {
     return (
       <div className={styles.container}>
         <h1>Green Kiwi</h1>
-        <button type="button" onClick={logout}><Link href="/login">sign out</Link></button>
+        <button type="button" onClick={logout}>sign out</button>
         <CreatePost />
         <Post />
         <Post />

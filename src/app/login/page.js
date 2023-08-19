@@ -15,6 +15,7 @@ export default function Login() {
     const [user, setUser] = useState({ email: '', password: '' })
     const router = useRouter()
 
+    console.log("FEATURE_FLAGS.CanLoginBeSkipped? " + FEATURE_FLAGS.CanLoginBeSkipped);
     if (FEATURE_FLAGS.CanLoginBeSkipped) {
         forceLoginWithDefaultUser(router);
     }

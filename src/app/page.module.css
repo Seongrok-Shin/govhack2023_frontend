@@ -209,7 +209,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .vercelLogo {
     filter: invert(1);
   }
@@ -217,7 +217,7 @@
   .logo {
     filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
-}
+} */
 
 @keyframes rotate {
   from {
@@ -226,4 +226,41 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+
+/* Bottom Nav Bar */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.navigation {
+  margin-top: auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navigation li {
+  font-size: 12px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.navigation a:hover {
+  color: #007bff;
 }

@@ -25,7 +25,7 @@
 
 .post__button--post {
   background-color: white;
-  color: rgb(96, 153, 12);
+  color: #4caf50;
   border: none;
   font-size: 25px;
   transition: 0.2s linear;
@@ -33,7 +33,7 @@
 }
 
 .post__button--post:hover {
-  color: rgb(155, 239, 30);
+  color: #8bc34a;
 }
 
 .post-modal {
@@ -60,6 +60,4 @@
 .btn {
   border: none;
   background-color: transparent;
-  &--back {
-  }
 }

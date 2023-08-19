@@ -5,10 +5,16 @@
   margin: 10px 0;
   border-bottom: 0.5px solid black;
   padding: 10px 0;
+  transition: 0.2s linear;
+  cursor: pointer;
 
   &__text {
     color: #999;
   }
+}
+
+.create-post:hover {
+  opacity: 0.8;
 }
 
 .post__container {
@@ -21,4 +27,10 @@
   color: rgb(96, 153, 12);
   border: none;
   font-size: 25px;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+
+.post__button--post:hover {
+  color: rgb(155, 239, 30);
 }

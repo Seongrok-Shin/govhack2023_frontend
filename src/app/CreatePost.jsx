@@ -70,10 +70,7 @@ export default function CreatePost() {
               placeholder="What's on your mind?"
             />
           </Modal.Body>
-
-          <Modal.Footer>
-            <Nav />
-          </Modal.Footer>
+          <Nav />
         </Modal.Dialog>
       </Modal>
     </div>

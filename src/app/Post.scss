@@ -1,0 +1,69 @@
+.card {
+    background-color: white;
+    border: 1px solid black;
+    width: 20rem;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+
+    &__name {
+        font-size: 18px;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__picture {
+        width: 50px;
+        height: 50px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        &--like {
+            padding: 5px 10px;
+            
+        }
+    }
+
+    &__button {
+        font-size: 18px;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__image {
+        width: 20rem;
+        height: auto;
+        object-fit: contain;
+        cursor: pointer;
+    }
+
+    &__icon--heart {
+        font-size: 30px;
+        cursor: pointer;
+        color: rgb(96, 153, 12);
+    }
+}
+
+.likes {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+}

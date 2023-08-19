@@ -35,7 +35,8 @@ export default function Home() {
   } else {
     return (
       <div className={styles.body}>
-        <h1>Green Kiwi</h1>
+        <i class="bi bi-list"></i>
+        <h1 className="{}">Green Kiwi</h1>
         <button type="button" onClick={logout}>
           sign out
         </button>

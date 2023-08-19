@@ -70,6 +70,24 @@ export default function CreatePost() {
               placeholder="What's on your mind?"
             />
           </Modal.Body>
+          <ul className="items">
+            <li className="item">
+              <img src="/camera.png" alt="camera icon" className="item-img" />
+              <p className="item-text">Camera</p>
+            </li>
+            <li className="item">
+              <img src="/gallery.png" alt="gallery icon" className="item-img" />
+              <p className="item-text">Photos</p>
+            </li>
+            <li className="item">
+              <img src="/emoji.png" alt="emoji icon" className="item-img" />
+              <p className="item-text">Emoji</p>
+            </li>
+            <li className="item">
+              <img src="/person.png" alt="person icon" className="item-img" />
+              <p className="item-text">People</p>
+            </li>
+          </ul>
           <Nav />
         </Modal.Dialog>
       </Modal>

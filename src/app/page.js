@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import CreatePost from "./CreatePost";
 import styles from "./page.module.css";
-import "./global.css";
+import "./font-config.css";
 import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
@@ -39,7 +39,7 @@ export default function Home() {
     return (
       <div className={styles.container}>
         <div className={`${styles.top_menu_bar} px-2 py-3`}>
-          <h1 className="d-inline-block">Green Kiwi</h1>
+          <h1 className="d-inline-block bold">Green Kiwi</h1>
         </div>
         <CreatePost />
         <PostList />

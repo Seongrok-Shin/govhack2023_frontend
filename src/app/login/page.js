@@ -4,25 +4,19 @@ import { auth } from "../../../firebaseConfig"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { useState } from "react"
 import { useRouter } from "next/navigation";
-// import 'bootstrap/dist/css/bootstrap.css'
+
 import Link from "next/link";
 import '../main.scss'
+import 'bootstrap/dist/css/bootstrap.css'
+import { ENVIRONMENT, FEATURE_FLAGS } from "../env";
+
 export default function Login() {
 
     const [user, setUser] = useState({ email: '', password: '' })
     const router = useRouter()
 
-    if (false) {
-        signInWithEmailAndPassword(auth, "default@gmail.com", "default")
-            .then((userCredential) => {
-                // Signed in 
-                const user = userCredential.user;
-                router.push("/");
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-            });
+    if (FEATURE_FLAGS.CanLoginBeSkipped) {
+        forceLoginWithDefaultUser(router);
     }
 
     const loginSubmit = () => {
@@ -64,4 +58,12 @@ export default function Login() {
             </div>
         </form>
     )
+}
+
+const forceLoginWithDefaultUser = (router) => {
+    signInWithEmailAndPassword(auth, ENVIRONMENT.DefaultUserEmail, ENVIRONMENT.DefaultUserPass)
+    .then((userCredential) => {
+        router.push("/");
+    })
+    .catch(console.error);
 }

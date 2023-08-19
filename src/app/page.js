@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Post from './Post';
+import CreatePost from './CreatePost';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h1>Green Kiwi</h1>
+      <CreatePost/>
       <Post/>
       <Post/>
 

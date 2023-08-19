@@ -13,7 +13,7 @@ function Post() {
             src="https://randomuser.me/api/portraits/men/1.jpg"
             className="profile__picture"
           ></img>
-          <p className="profile__name">John Doe</p>
+          <p className="profile__name">sdf</p>
         </div>
         <div className="profile__buttons">
           <button className="profile__button">

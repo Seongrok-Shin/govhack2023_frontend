@@ -1,31 +1,25 @@
 "use client";
 
 import { auth } from "../../../firebaseConfig"
-import { signInWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword } from "firebase/auth"
 import { useState } from "react"
 import { useRouter } from "next/navigation";
 
-import Link from "next/link";
 import '../main.scss'
 import 'bootstrap/dist/css/bootstrap.css'
-import { ENVIRONMENT, FEATURE_FLAGS } from "../env";
 
-export default function Login() {
+
+export default function signUp() {
 
     const [user, setUser] = useState({ email: '', password: '' })
     const router = useRouter()
 
-    console.log("FEATURE_FLAGS.CanLoginBeSkipped? " + FEATURE_FLAGS.CanLoginBeSkipped);
-    if (FEATURE_FLAGS.CanLoginBeSkipped) {
-        forceLoginWithDefaultUser(router);
-    }
-
-    const loginSubmit = () => {
-        signInWithEmailAndPassword(auth, user.email, user.password)
+    const signUp = () => {
+        createUserWithEmailAndPassword(auth, user.email, user.password)
             .then((userCredential) => {
-                // Signed in 
+                // Signed Up
                 const user = userCredential.user;
-                router.push("/");
+                router.push("/login");
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -47,27 +41,11 @@ export default function Login() {
                 <input id="password" type="password" placeholder="**********" className="form-control"
                     onChange={event => setUser({ ...user, password: event.target.value })} />
             </div>
-            <div className="form-group d-flex justify-content-center">
-                <button className="btn btn-success px-5" type="button" onClick={loginSubmit}>
-                    Sign In
-                </button>
-            </div>
-            <div className="fs-6 text-center">
-                <Link href="/forgot">Forgot password?</Link>
-            </div>
             <div className="form-group d-flex justify-content-center py-5">
-                <button className="btn btn-success px-5" type="button" onClick={signUpPage}>
+                <button className="btn btn-success px-5" type="button" onClick={signUp}>
                     Register
                 </button>
             </div>
         </form>
     )
-}
-
-const forceLoginWithDefaultUser = (router) => {
-    signInWithEmailAndPassword(auth, ENVIRONMENT.DefaultUserEmail, ENVIRONMENT.DefaultUserPass)
-    .then((userCredential) => {
-        router.push("/");
-    })
-    .catch(console.error);
 }

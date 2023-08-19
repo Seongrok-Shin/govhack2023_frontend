@@ -4,7 +4,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Post.scss';
 import Image from 'next/image';
 
-function Post({post}) {
+function Post({ post }) {
   return (
     <Card className="post">
       <div className="profile">

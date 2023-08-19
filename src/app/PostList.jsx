@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Post from "./Post";
 import { getAllPosts } from './api/api';
 
-export default function PostList({ posts }) {
+export default function PostList() {
   const [userPosts, setUserPosts] = useState([]);
 
   useEffect(() => {

@@ -13,10 +13,8 @@ export async function getAllPosts() {
         headers: {"authorization": token}
     });
     try {
-      const data = res.data();
-      console.debug("Got posts!", data);
-
-      return data;
+      console.debug("Got posts!", res.data);
+      return res.data;
     } catch (err) {
       console.error(err);
       return [];

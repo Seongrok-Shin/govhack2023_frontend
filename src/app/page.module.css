@@ -38,6 +38,10 @@
   border-radius: var(--border-radius);
 }
 
+.grayscale {
+  filter: grayscale(100%);
+}
+
 .code {
   font-weight: 700;
   font-family: var(--font-mono);
@@ -245,7 +249,7 @@
   left: 0;
   bottom: 0;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   width: 100%;
   height: 10vh;
 }

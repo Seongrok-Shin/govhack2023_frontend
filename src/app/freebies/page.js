@@ -3,7 +3,7 @@ import React from 'react';
 import styles from '../page.module.css';
 import Nav from '../Nav';
 
-const Dashboard = () => {
+const Freebie = () => {
   return (
     <div className={styles.container}>
       <h1> Freebie page</h1>

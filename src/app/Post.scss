@@ -100,3 +100,56 @@
 .likes:hover {
   color: #777;
 }
+
+.comments {
+  padding: 5px 0;
+}
+
+.comment {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__toggle {
+    color: #000;
+    text-decoration: none;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+  }
+
+  &__picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+
+  &__name {
+    margin-right: 10px;
+    font-weight: 900;
+  }
+
+  &__name,
+  &__text {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    border-bottom: 0.3px solid #222;
+    background-color: #f8f8f8;
+  }
+
+  &__container {
+    display: flex;
+  }
+}
+
+.comment:not(:first-of-type) {
+  margin-top: 12px;
+}

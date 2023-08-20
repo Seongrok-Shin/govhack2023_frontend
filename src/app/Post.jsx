@@ -2,6 +2,7 @@
 import Card from 'react-bootstrap/Card';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Post.scss';
+import './globals.css';
 import Image from 'next/image';
 
 function Post({ post }) {
@@ -46,6 +47,50 @@ function Post({ post }) {
           </div>
         </div>
       </Card.Body>
+      <Card.Footer>
+        <a className="comment__toggle" href="#">
+          View All 16 comments
+        </a>
+        <ul className="comments">
+          <li className="comment">
+            <img
+              src="https://randomuser.me/api/portraits/men/1.jpg"
+              className="comment__picture"
+            ></img>
+            <p className="comment__name">elvin</p>
+
+            <p className="comment__text">good job!!</p>
+          </li>
+          <li className="comment">
+            <img
+              src="https://randomuser.me/api/portraits/men/1.jpg"
+              className="comment__picture"
+            ></img>
+            <p className="comment__name">elvin</p>
+
+            <p className="comment__text">good job!!</p>
+          </li>
+          <li className="comment">
+            <img
+              src="https://randomuser.me/api/portraits/men/1.jpg"
+              className="comment__picture"
+            ></img>
+            <p className="comment__name">elvin</p>
+
+            <p className="comment__text">good job!!</p>
+          </li>
+        </ul>
+        <div className="comment__container">
+          <input
+            type="text"
+            placeholder="Add a comment..."
+            className="comment__input"
+          />
+          <button type="button" class="btn btn-success">
+            Post
+          </button>
+        </div>
+      </Card.Footer>
     </Card>
   );
 }

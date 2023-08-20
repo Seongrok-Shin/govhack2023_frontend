@@ -4,17 +4,28 @@ import Nav from './Nav';
 import { useState } from 'react';
 import './CreatePost.scss';
 import Modal from 'react-bootstrap/Modal';
+import { createPost } from './api/postsApi';
 
 export default function CreatePost() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [postContent, setPostContent] = useState('');
 
   const handleSubmit = () => {
-    console.log('Submitting Post: ', postContent);
-    // Logic to submit the post, e.g., API calls
+    async () => {
+      try {
+        if (!postContent) {
+          createPost(postContent);
+        } else {
+          console.log('Empty content');
+        }
+      } catch (error) {
+        console.error('Error while making POST request:', error);
+      }
+    };
 
     // Close the modal and clear the input after submitting
     setModalOpen(false);
+    console.log(postContent);
     setPostContent('');
   };
 
@@ -70,10 +81,25 @@ export default function CreatePost() {
               placeholder="What's on your mind?"
             />
           </Modal.Body>
-
-          <Modal.Footer>
-            <Nav />
-          </Modal.Footer>
+          <ul className="items">
+            <li className="item">
+              <img src="/camera.png" alt="camera icon" className="item-img" />
+              <p className="item-text">Camera</p>
+            </li>
+            <li className="item">
+              <img src="/gallery.png" alt="gallery icon" className="item-img" />
+              <p className="item-text">Photos</p>
+            </li>
+            <li className="item">
+              <img src="/emoji.png" alt="emoji icon" className="item-img" />
+              <p className="item-text">Emoji</p>
+            </li>
+            <li className="item">
+              <img src="/person.png" alt="person icon" className="item-img" />
+              <p className="item-text">People</p>
+            </li>
+          </ul>
+          <Nav />
         </Modal.Dialog>
       </Modal>
     </div>

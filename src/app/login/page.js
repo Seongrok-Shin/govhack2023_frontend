@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 
 import Link from 'next/link';
 import '../main.scss';
+import "../font-config.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import { ENVIRONMENT, FEATURE_FLAGS } from '../env';
 
@@ -41,7 +42,7 @@ export default function Login() {
   return (
     <div className="d-flex justify-content-center align-items-center">
       <form className="px-3 pt-5 w-100">
-        <h1 className="text-center source_sans py-5 text-success">GREEN KIWI</h1>
+        <h1 className="text-center bold py-5 text-success">GREEN KIWI</h1>
         <div className="form-group">
           <input
             id="email"
@@ -72,7 +73,7 @@ export default function Login() {
           </button>
         </div>
         <div className="fs-6 pt-3 text-center">
-          <Link href="/forgot">Forgot password?</Link>
+          <Link href="/forgot" className="light text-decoration-none text-secondary">Forgot password?</Link>
         </div>
         <div className="form-group d-flex justify-content-center py-5">
           <button

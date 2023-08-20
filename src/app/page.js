@@ -32,7 +32,7 @@ export default function Home() {
 
   const router = useRouter();
   if (!isUserLoggedIn) {
-    return <span>hi</span>;
+    return;
   } else {
     return (
       <div className={styles.container}>

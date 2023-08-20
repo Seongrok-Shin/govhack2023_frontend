@@ -5,29 +5,27 @@ import styles from './page.module.css';
 import { useRouter } from 'next/navigation';
 
 export default function Nav() {
-
   const router = useRouter();
   const HomePage = () => {
-    router.push("/")
-  }
+    router.push('/');
+  };
   const DashBoardPage = () => {
-    router.push("/dashboard")
-  }
+    router.push('/dashboardone');
+  };
   const FreebiesPage = () => {
-    router.push("/freebies")
-  }
+    router.push('/freebies');
+  };
   const LearningPage = () => {
-    router.push("/learning")
-  }
+    router.push('/learning');
+  };
   const ProfilePage = () => {
-    router.push("/reward")
-  }
+    router.push('/reward');
+  };
   return (
     <nav className={styles.navigation}>
       <ul>
         <li>
-          <div className={styles.logo}
-            onClick={HomePage}>
+          <div className={styles.logo} onClick={HomePage}>
             <img
               src="/eco-house.png"
               alt="eco house logo"
@@ -37,8 +35,7 @@ export default function Nav() {
           </div>
         </li>
         <li>
-          <div className={styles.logo}
-            onClick={DashBoardPage}>
+          <div className={styles.logo} onClick={DashBoardPage}>
             <img
               src="layout.png"
               alt="layout logo"
@@ -48,19 +45,17 @@ export default function Nav() {
           </div>
         </li>
         <li>
-          <div className={styles.logo}
-            onClick={FreebiesPage}>
+          <div className={styles.logo} onClick={FreebiesPage}>
             <img
               src="/present.png"
               alt="present logo"
               style={{ width: '30px', height: '30', marginLeft: 7 }}
             />
-            <p>Freebies</p>
+            <p>Market Place</p>
           </div>
         </li>
         <li>
-          <div className={styles.logo}
-            onClick={LearningPage}>
+          <div className={styles.logo} onClick={LearningPage}>
             <img
               src="/learning.png"
               alt="learning logo"
@@ -70,8 +65,7 @@ export default function Nav() {
           </div>
         </li>
         <li>
-          <div className={styles.logo}
-            onClick={ProfilePage}>
+          <div className={styles.logo} onClick={ProfilePage}>
             <img
               src="/user.png"
               alt="user logo"
@@ -83,4 +77,4 @@ export default function Nav() {
       </ul>
     </nav>
   );
-};
+}

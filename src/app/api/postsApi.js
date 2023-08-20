@@ -12,15 +12,6 @@ export async function getAllPosts() {
     const res = await axios.get(GET_ALL_POSTS, config);
     console.info('Got posts!', res.data);
 
-    const post = {
-      content: 'created',
-    };
-
-    // await createPost(post);
-
-    // post.content = "updated";
-    // await updatePostForId(post);
-
     return res.data;
   } catch (err) {
     console.error(err);

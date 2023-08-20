@@ -52,33 +52,19 @@ function Post({ post},{user}) {
           View All 16 comments
         </a>
         <ul className="comments">
-          <li className="comment">
-            <img
-              src="https://randomuser.me/api/portraits/men/1.jpg"
-              className="comment__picture"
-            ></img>
-            <p className="comment__name">elvin</p>
-
-            <p className="comment__text">good job!!</p>
-          </li>
-          <li className="comment">
-            <img
-              src="https://randomuser.me/api/portraits/men/1.jpg"
-              className="comment__picture"
-            ></img>
-            <p className="comment__name">elvin</p>
-
-            <p className="comment__text">good job!!</p>
-          </li>
-          <li className="comment">
-            <img
-              src="https://randomuser.me/api/portraits/men/1.jpg"
-              className="comment__picture"
-            ></img>
-            <p className="comment__name">elvin</p>
-
-            <p className="comment__text">good job!!</p>
-          </li>
+          {
+            post.comments && post.comments.map((data)=> {
+              return  <li className="comment">
+              <img
+                src={post.post_image}
+                className="comment__picture"
+              ></img>
+              <p className="comment__name">elvin</p>
+  
+              <p className="comment__text">{data.content}</p>
+            </li>;
+            })
+          }
         </ul>
         <div className="comment__container">
           <input

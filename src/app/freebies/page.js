@@ -3,7 +3,7 @@ import React from 'react';
 import styles from '../page.module.css';
 import Nav from '../Nav';
 
-export default function Freebies () {
+const Dashboard = () => {
   return (
     <div className={styles.container}>
       <h1> Freebie page</h1>
@@ -11,3 +11,5 @@ export default function Freebies () {
     </div>
   );
 };
+
+export default Dashboard;

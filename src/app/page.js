@@ -32,7 +32,6 @@ export default function Home() {
         </div>
         <CreatePost />
         <PostList />
-        <PostList />
         <Nav />
       </div>
     );

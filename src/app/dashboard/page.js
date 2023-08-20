@@ -1,7 +1,8 @@
-"use client";
-import styles from "../page.module.css";
-import Nav from "../Nav";
-import { BarChart } from "@mui/x-charts/BarChart";
+'use client';
+import styles from '../page.module.css';
+import Nav from '../Nav';
+import { BarChart } from '@mui/x-charts/BarChart';
+
 
 import React, { useState, useEffect } from "react";
 

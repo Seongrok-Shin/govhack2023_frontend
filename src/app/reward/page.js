@@ -1,19 +1,31 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import styles from "../page.module.css";
 import Image from "next/image";
+import Nav from "../Nav"
+import { signOut } from "firebase/auth";
+import { auth } from "../../../firebaseConfig";
+import '../font-config.css';
+import { useRouter } from "next/navigation";
+import 'bootstrap/dist/css/bootstrap.css';
 
-const INITIAL_TOGGLE_STATES = {
-  BADGES: true,
-  CHALLENGES: false
-};
+export default function Profile() {
+  const router = useRouter();
+  const logout = async () => {
+    console.log('Logging out...');
+    await signOut(auth);
+    console.log('Redirecting to login page...');
+    router.push('/login');
+  };
 
-const Dashboard = () => {
+  const INITIAL_TOGGLE_STATES = {
+    BADGES: true,
+    CHALLENGES: false
+  };
   const user = {
     Firstname: "Harold",
     Lastname: "Min",
-    ID: "abcdef1234",
+    Email: "default@gmail.com",
     Title: "Super C02 Saver",
     Image: "https://randomuser.me/api/portraits/men/1.jpg",
   };
@@ -33,6 +45,10 @@ const Dashboard = () => {
 
   return (
     <div className={styles.container}>
+      <div className={`${styles.top_menu_bar} px-2 py-3 row justify-content-between`}>
+        <h1 className="d-inline-block bold col-4">Profile</h1>
+        <div className="col-4 text-end" onClick={logout}>Sign Out</div>
+      </div>
       <div className={styles.profileCard}>
         <div className={styles.profileImageContainer}>
           <img
@@ -46,7 +62,7 @@ const Dashboard = () => {
             className={styles.profileName}
           >{`${user.Firstname} ${user.Lastname}`}</h2>
           <p className={styles.profileTitle}>{user.Title}</p>
-          <p className={styles.profileID}>ID: {user.ID}</p>
+          <p className={styles.profileID}>ID: {user.Email}</p>
         </div>
 
         <div className={styles.buttonContainer}>
@@ -59,15 +75,15 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className={styles.badgeSection}>
+      <div>
         {showBadges && (
-          <>
+          <div className={styles.badgeSection}>
             <p className={styles.profileTitle}>Refer A Friend</p>
             <div className={styles.badgeCard}>
               <div className={styles.badgeContainer}>
                 <div>
                   <Image src="/1.png" alt="badge 1" width={40} height={40} />
-                  <Image src="/2.png" alt="badge 2" width={40} height={40} />
+                  <Image src="/2.png" alt="badge 2" width={40} height={40} className={styles.grayscale} />
                   <Image src="/3.png" alt="badge 3" width={40} height={40} />
                 </div>
               </div>
@@ -79,7 +95,7 @@ const Dashboard = () => {
               <div>
                 <Image src="/4.png" alt="badge 4" width={40} height={40} />
                 <Image src="/5.png" alt="badge 5" width={40} height={40} />
-                <Image src="/6.png" alt="badge 6" width={40} height={40} />
+                <Image src="/6.png" alt="badge 6" width={40} height={40} className={styles.grayscale} />
               </div>
             </div>
 
@@ -87,88 +103,31 @@ const Dashboard = () => {
             <div className={styles.badgeCard}>
               <div className={styles.badgeContainer}>
                 <div>
-                  <Image src="/12.png" alt="badge 12" width={40} height={40} />
+                  <Image src="/12.png" alt="badge 12" width={40} height={40} className={styles.grayscale} />
                   <Image src="/13.png" alt="badge 13" width={40} height={40} />
                   <Image src="/14.png" alt="badge 14" width={40} height={40} />
                 </div>
               </div>
             </div>
-          </>
+          </div>
         )}
 
         {showChallenges && (
-          <>
-            <p className={styles.profileTitle}>What is Refer A Friend?</p>
-            <p>
-              * You can accomplish this by sharing your status with your
-              friends!
-            </p>
-
-            <p className={styles.profileTitle}>What is Ride Bike?</p>
-            <p>* You can attain this by recording your bike rides!</p>
-
-            <p className={styles.profileTitle}>What is Use Public Transport?</p>
-            <p>* You can reach this goal by using public transportation!</p>
-          </>
+          <div className="py-3">
+            <p className="badge bg-success"> Car-Free Commute: Use public transport, bike, walk, or carpool.</p>
+            <p className="badge bg-success"> Meatless Mondays: Go vegetarian once a week.</p>
+            <p className="badge bg-success"> Energy-Smart Home: Use LEDs, seal drafts, and adjust thermostats.</p>
+            <p className="badge bg-success"> Reduce, Reuse, Recycle: Minimize waste, recycle, and use reusables.</p>
+            <p className="badge bg-success"> Unplug and Power Down: Turn off devices and lights when not in use.</p>
+            <p className="badge bg-success"> Minimalist Consumption: Buy fewer, quality items with less packaging.</p>
+            <p className="badge bg-success"> Local, Seasonal Eating: Choose locally grown and in-season foods.</p>
+            <p className="badge bg-success"> Eco-Friendly Shopping: Opt for sustainable, ethical products..</p>
+            <p className="badge bg-success"> Energy-Saving Tech: Use energy-efficient appliances and sources.</p>
+            <p className="badge bg-success"> Plant a Tree: Contribute to tree planting initiatives.</p>
+          </div>
         )}
       </div>
-
-      <nav className={styles.navigation}>
-        <ul>
-          <li>
-            <div className={styles.logo}>
-              <img
-                src="/eco-house.png"
-                alt="eco house logo"
-                style={{ width: "30px", height: "30", marginLeft: 4 }}
-              />
-            </div>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <div className={styles.logo}>
-              <img
-                src="layout.png"
-                alt="layout logo"
-                style={{ width: "30px", height: "30", marginLeft: 15 }}
-              />
-            </div>
-            <Link href="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <div className={styles.logo}>
-              <img
-                src="/present.png"
-                alt="present logo"
-                style={{ width: "30px", height: "30", marginLeft: 7 }}
-              />
-            </div>
-            <Link href="/freebies">Freebies</Link>
-          </li>
-          <li>
-            <div className={styles.logo}>
-              <img
-                src="/learning.png"
-                alt="learning logo"
-                style={{ width: "30px", height: "30", marginLeft: 8 }}
-              />
-            </div>
-            <Link href="/learning">Learning</Link>
-          </li>
-          <li>
-            <div className={styles.logo}>
-              <img
-                src="/user.png"
-                alt="user logo"
-                style={{ width: "30px", height: "30", marginLeft: 3 }}
-              />
-            </div>
-            <Link href="/reward">Profile</Link>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
     </div>
   );
 };
-
-export default Dashboard;

@@ -4,14 +4,14 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Post.scss';
 import './globals.css';
 import Image from 'next/image';
-
+//profile _picture
 function Post({ post},{user}) {
   return (
     <Card className="post">
       <div className="profile">
         <div className="profile__container">
           <img
-            src={user.profile_image}
+            src={post.post_image}
             className="profile__picture"
           ></img>
           <p className="profile__name">{post.content}</p>

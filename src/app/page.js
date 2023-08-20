@@ -4,9 +4,7 @@ import CreatePost from './CreatePost';
 import styles from './page.module.css';
 import './font-config.css';
 import { useRouter } from 'next/navigation';
-import { signOut } from 'firebase/auth';
 import { auth } from '../../firebaseConfig';
-import Link from 'next/link';
 import PostList from './PostList';
 import Nav from './Nav';
 export default function Home() {

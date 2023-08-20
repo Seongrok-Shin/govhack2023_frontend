@@ -184,7 +184,9 @@
     position: fixed;
     width: 100%;
   }
-
+  .grayscale {
+    filter: grayscale(100%);
+  }
   .description p {
     align-items: center;
     inset: 0 0 auto;

@@ -4,17 +4,28 @@ import Nav from './Nav';
 import { useState } from 'react';
 import './CreatePost.scss';
 import Modal from 'react-bootstrap/Modal';
+import { createPost } from './api/postsApi';
 
 export default function CreatePost() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [postContent, setPostContent] = useState('');
 
   const handleSubmit = () => {
-    console.log('Submitting Post: ', postContent);
-    // Logic to submit the post, e.g., API calls
+    async () => {
+      try {
+        if (!postContent) {
+          createPost(postContent);
+        } else {
+          console.log('Empty content');
+        }
+      } catch (error) {
+        console.error('Error while making POST request:', error);
+      }
+    };
 
     // Close the modal and clear the input after submitting
     setModalOpen(false);
+    console.log(postContent);
     setPostContent('');
   };
 

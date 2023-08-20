@@ -6,65 +6,65 @@ import { BarChart } from '@mui/x-charts/BarChart';
 
 import React, { useState, useEffect } from "react";
 
-const data = [
-  { date: "2023-05", emission: { transport: 20, housing: 50, food: 60 } },
-  { date: "2023-03", emission: { transport: 80, food: 20 } },
-  { date: "2023-01", emission: { transport: 90, housing: 10, food: 10 } },
-];
+export default function Dashboard() {
 
-const EMISSION_TYPES = ["transport", "housing", "food", "travel", "others"];
+  const data = [
+    { date: "2023-05", emission: { transport: 20, housing: 50, food: 60 } },
+    { date: "2023-03", emission: { transport: 80, food: 20 } },
+    { date: "2023-01", emission: { transport: 90, housing: 10, food: 10 } },
+  ];
 
-function getTotalEmissions(data) {
-  let total = 0;
+  const EMISSION_TYPES = ["transport", "housing", "food", "travel", "others"];
 
-  data.forEach((entry) => {
-    for (let value of Object.values(entry.emission)) {
-      total += value;
-    }
-  });
+  function getTotalEmissions(data) {
+    let total = 0;
 
-  return total;
-}
+    data.forEach((entry) => {
+      for (let value of Object.values(entry.emission)) {
+        total += value;
+      }
+    });
 
-function getEmissionByMonth(data) {
-  // Sort the data by date
-  data.sort((a, b) => new Date(a["date"]) - new Date(b["date"]));
+    return total;
+  }
 
-  // Create label for each individual month
-  const labels = data.map((item) => item["date"]);
+  function getEmissionByMonth(data) {
+    // Sort the data by date
+    data.sort((a, b) => new Date(a["date"]) - new Date(b["date"]));
 
-  // Extract data for each category for each individual month
-  const emissions_data = EMISSION_TYPES.map((emission_type) => {
+    // Create label for each individual month
+    const labels = data.map((item) => item["date"]);
+
+    // Extract data for each category for each individual month
+    const emissions_data = EMISSION_TYPES.map((emission_type) => {
+      return {
+        data: data.map((item) => item["emission"][emission_type] || 0),
+        label: emission_type,
+        stack: "A",
+      };
+    });
+
+    // Convert to the desired format
     return {
-      data: data.map((item) => item["emission"][emission_type] || 0),
-      label: emission_type,
-      stack: "A",
+      labels: labels,
+      series: emissions_data,
     };
-  });
+  }
 
-  // Convert to the desired format
-  return {
-    labels: labels,
-    series: emissions_data,
-  };
-}
+  function getCumulativeEmissionData(data) {
+    const labels = EMISSION_TYPES;
 
-function getCumulativeEmissionData(data) {
-  const labels = EMISSION_TYPES;
+    const cumulative_emissions = EMISSION_TYPES.map((emission_type) => {
+      let sum = 0;
+      data.forEach((item) => (sum += item["emission"][emission_type] || 0));
+      return sum;
+    });
 
-  const cumulative_emissions = EMISSION_TYPES.map((emission_type) => {
-    let sum = 0;
-    data.forEach((item) => (sum += item["emission"][emission_type] || 0));
-    return sum;
-  });
-
-  return {
-    labels: labels,
-    series: [{ data: cumulative_emissions }],
-  };
-}
-
-const Dashboard = () => {
+    return {
+      labels: labels,
+      series: [{ data: cumulative_emissions }],
+    };
+  }
   const [chartSize, setChartSize] = useState(600);
 
   useEffect(() => {
@@ -130,4 +130,3 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;

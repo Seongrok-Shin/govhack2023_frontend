@@ -1,6 +1,6 @@
 'use client';
 import styles from '../page.module.css';
-import Footer from '../_components/footer';
+import Nav from '../Nav';
 import { BarChart } from '@mui/x-charts/BarChart';
 
 import React, { useState, useEffect } from 'react';

@@ -5,13 +5,13 @@ import './Post.scss';
 import './globals.css';
 import Image from 'next/image';
 
-function Post({ post }) {
+function Post({ post},{user}) {
   return (
     <Card className="post">
       <div className="profile">
         <div className="profile__container">
           <img
-            src="https://randomuser.me/api/portraits/men/1.jpg"
+            src={user.profile_image}
             className="profile__picture"
           ></img>
           <p className="profile__name">{post.content}</p>
@@ -33,7 +33,7 @@ function Post({ post }) {
         <Card.Img
           className="profile__image"
           variant="top"
-          src="https://randomuser.me/api/portraits/men/1.jpg"
+          src={post.post_image}
         />
         <div className="profile__buttons profile__buttons--like">
           <div className="likes__container">

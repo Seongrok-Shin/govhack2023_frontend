@@ -5,16 +5,16 @@ import './Post.scss';
 import './globals.css';
 import Image from 'next/image';
 //profile _picture
-function Post({ post},{user}) {
+function Post({ post}) {
   return (
     <Card className="post">
       <div className="profile">
         <div className="profile__container">
           <img
-            src={post.post_image}
+            src={post.user_id.post_image}
             className="profile__picture"
           ></img>
-          <p className="profile__name">{post.content}</p>
+          <p className="profile__name">{post.user_id.name}</p>
         </div>
         <div className="profile__buttons">
           <button className="profile__button">
@@ -27,8 +27,7 @@ function Post({ post},{user}) {
       </div>
       <Card.Body>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        {post.content}
         </Card.Text>
         <Card.Img
           className="profile__image"

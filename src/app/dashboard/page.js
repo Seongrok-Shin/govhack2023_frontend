@@ -1,14 +1,11 @@
 'use client';
-import styles from '../page.module.css';
 import Nav from '../Nav';
-import { BarChart } from '@mui/x-charts/BarChart';
-
-import React, { useState, useEffect } from 'react';
-
+import Image from 'next/image';
+import BackgroundIMG from '../../../public/dashboard.png';
 const Dashboard = () => {
   return (
-    <div className={styles.container}>
-      <h1> Freebie page</h1>
+    <div className="imgbackground">
+      <Image src={BackgroundIMG} width={390} height={759.6} />
       <Nav />
     </div>
   );

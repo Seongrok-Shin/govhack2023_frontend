@@ -10,13 +10,6 @@ import Link from 'next/link';
 import PostList from './PostList';
 import Nav from './Nav';
 export default function Home() {
-  const logout = async () => {
-    console.log('Logging out...');
-    await signOut(auth);
-    console.log('Redirecting to login page...');
-    router.push('/login');
-  };
-
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -32,7 +25,7 @@ export default function Home() {
 
   const router = useRouter();
   if (!isUserLoggedIn) {
-    return <span>hi</span>;
+    return;
   } else {
     return (
       <div className={styles.container}>

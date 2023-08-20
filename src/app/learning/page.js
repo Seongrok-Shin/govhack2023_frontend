@@ -2,14 +2,14 @@
 import React from 'react';
 import styles from '../page.module.css';
 import Nav from '../Nav';
+import Image from 'next/image';
+import BackgroundIMG from '../../../public/learning-section.png';
 
-const Dashboard = () => {
+export default function Learning() {
   return (
     <div className={styles.container}>
-      <h1>Learning page</h1>
+      <Image src={BackgroundIMG} width={390} height={844} />
       <Nav />
     </div>
   );
-};
-
-export default Dashboard;
+}

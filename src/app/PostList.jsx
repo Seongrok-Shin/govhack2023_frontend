@@ -28,4 +28,8 @@ export default function PostList() {
       )}
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 76fc655480ce686bc4a2f0401b71120c4de861ac

@@ -2,14 +2,17 @@
 import React from 'react';
 import styles from '../page.module.css';
 import Nav from '../Nav';
+import Image from 'next/image';
 
-const Dashboard = () => {
+import BackgroundIMG from '../../../public/marketPlace.png';
+
+const Freebies = () => {
   return (
     <div className={styles.container}>
-      <h1> Freebie page</h1>
+      <Image src={BackgroundIMG} width={390} height={844} />
       <Nav />
     </div>
   );
 };
 
-export default Dashboard;
+export default Freebies;

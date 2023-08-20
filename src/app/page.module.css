@@ -7,6 +7,10 @@
   min-height: 100vh;
 }
 
+.body {
+  margin-bottom: 12vh;
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
@@ -237,10 +241,13 @@
 }
 
 .navigation {
-  margin-top: auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   padding: 20px;
   background-color: #f0f0f0;
   width: 100%;
+  height: 10vh;
 }
 
 .navigation ul {
@@ -266,7 +273,7 @@
 
 /* Profile */
 .container {
-  margin: 0 auto;
+  margin: 0 auto 10vh;
 }
 
 .profileCard {

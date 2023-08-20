@@ -37,12 +37,12 @@ function Post({ post }) {
         <div className="profile__buttons profile__buttons--like">
           <div className="likes__container">
             <i class="bi bi-hearts profile__icon profile__icon--heart"></i>
-            <button className="likes">50</button>
+            <button className="likes">{post.likes}</button>
           </div>
 
           <div className="likes__container">
             <i class="bi bi-suit-heart-fill profile__icon profile__icon--heart"></i>
-            <button className="likes">Kudos</button>
+            <button className="likes">{post.likes}</button>
           </div>
         </div>
       </Card.Body>
